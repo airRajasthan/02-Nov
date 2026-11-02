@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Barlow', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Rajdhani', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-rajdhani: 'Rajdhani', system-ui, sans-serif;
+  --font-barlow: 'Barlow', system-ui, sans-serif;
+
+  --color-brand-blue: #0083C7;
+  --color-brand-blue-hover: #0072AD;
+  --color-brand-golden: #D39257;
+  --color-brand-golden-hover: #BE7F45;
+  --color-brand-charcoal: #2B2A29;
+
+  --color-charcoal-50: #F7F7F6;
+  --color-charcoal-100: #EBEBEA;
+  --color-charcoal-200: #D8D8D6;
+  --color-charcoal-300: #B7B6B4;
+  --color-charcoal-400: #8C8A88;
+  --color-charcoal-500: #686664;
+  --color-charcoal-600: #4B4947;
+  --color-charcoal-700: #383635;
+  --color-charcoal-800: #2B2A29;
+  --color-charcoal-900: #1C1B1A;
+  --color-charcoal-950: #100F0F;
+
+  --color-sky-50: #EFF7FC;
+  --color-sky-100: #D9EEF9;
+  --color-sky-200: #B2DEF3;
+  --color-sky-300: #7BC4EB;
+  --color-sky-400: #3EA6E1;
+  --color-sky-500: #0083C7;
+  --color-sky-600: #0072AD;
+  --color-sky-700: #005A8A;
+  --color-sky-800: #004367;
+  --color-sky-900: #002D45;
+
+  --color-golden-50: #FAF5EE;
+  --color-golden-100: #F4E8D7;
+  --color-golden-200: #E7CFB2;
+  --color-golden-300: #D9B38A;
+  --color-golden-400: #CB9863;
+  --color-golden-500: #D39257;
+  --color-golden-600: #BE7F45;
+  --color-golden-700: #986333;
+  --color-golden-800: #704724;
+  --color-golden-900: #492D16;
+
+  --color-surface-bg: #F9F9F8;
+  --color-surface-card: #FFFFFF;
+  --color-surface-border: #E5E5E3;
+  --color-surface-muted: #F2F2F0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface-bg);
+  color: var(--color-charcoal-800);
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+}
+
+/* Tabular figures for telemetry, flight manifests, time, numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle hairline divider */
+.hairline-b {
+  border-bottom: 1px solid var(--color-surface-border);
+}
+.hairline-t {
+  border-top: 1px solid var(--color-surface-border);
+}
+.hairline-r {
+  border-right: 1px solid var(--color-surface-border);
+}
+.hairline-l {
+  border-left: 1px solid var(--color-surface-border);
+}
+
+/* 7X-inspired cinematic ambient motion */
+@keyframes kenburns-slow {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate(-1%, -1%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns-slow 24s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar {
+  animation: radar-sweep 8s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes flight-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+.animate-flight-pulse {
+  animation: flight-pulse 4s ease-in-out infinite;
+}
+
+/* Respect user's reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns,
+  .animate-radar,
+  .animate-flight-pulse {
+    animation: none !important;
+    transform: none !important;
+  }
+}

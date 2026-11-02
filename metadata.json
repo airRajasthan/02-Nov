@@ -1,0 +1,8 @@
+{
+  "name": "AirRajasthan™",
+  "description": "AirRajasthan™ Aviation & Logistics Solutions — Connecting India's industrial corridors to global gateways through the proposed Jaipur–Fujairah air cargo corridor, charter services, and multimodal logistics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
